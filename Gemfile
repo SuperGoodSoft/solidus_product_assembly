@@ -9,7 +9,7 @@ gem 'solidus', github: 'solidusio/solidus', branch: branch
 # Needed to help Bundler figure out how to resolve dependencies,
 # otherwise it takes forever to resolve them.
 # See https://github.com/bundler/bundler/issues/6677
-gem 'rails', '>0.a'
+gem 'rails', "~> 5.2.5", "< 5.2.6"
 
 # Provides basic authentication functionality for testing parts of your engine
 gem 'solidus_auth_devise'
@@ -23,11 +23,13 @@ else
   gem 'sqlite3'
 end
 
+  gem 'pry-rails'
+  gem 'pry-stack_explorer'
+
 group :test do
   gem 'webdrivers'
   gem 'selenium-webdriver'
 end
-
 gemspec
 
 # Use a local Gemfile to include development dependencies that might not be
